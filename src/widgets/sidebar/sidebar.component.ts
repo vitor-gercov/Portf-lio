@@ -25,6 +25,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     { id: 'hero', label: 'Início' },
     { id: 'timeline', label: 'Experiência' },
     { id: 'projects', label: 'Projetos' },
+    { id: 'about', label: 'Sobre mim' },
   ];
 
   activeSection = signal<string>('hero');

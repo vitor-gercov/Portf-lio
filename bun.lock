@@ -9,6 +9,7 @@
         "@angular/compiler": "^21.2.0",
         "@angular/core": "^21.2.0",
         "@angular/forms": "^21.2.0",
+        "@angular/localize": "~21.2.0",
         "@angular/platform-browser": "^21.2.0",
         "@angular/router": "^21.2.0",
         "rxjs": "~7.8.0",
@@ -77,6 +78,8 @@
     "@angular/core": ["@angular/core@21.2.4", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/compiler": "21.2.4", "rxjs": "^6.5.3 || ^7.4.0", "zone.js": "~0.15.0 || ~0.16.0" }, "optionalPeers": ["@angular/compiler", "zone.js"] }, "sha512-2+gd67ZuXHpGOqeb2o7XZPueEWEP81eJza2tSHkT5QMV8lnYllDEmaNnkPxnIjSLGP1O3PmiXxo4z8ibHkLZwg=="],
 
     "@angular/forms": ["@angular/forms@21.2.4", "", { "dependencies": { "@standard-schema/spec": "^1.0.0", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "21.2.4", "@angular/core": "21.2.4", "@angular/platform-browser": "21.2.4", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-1fOhctA9ADEBYjI3nPQUR5dHsK2+UWAjup37Ksldk/k0w8UpD5YsN7JVNvsDMZRFMucKYcGykPblU7pABtsqnQ=="],
+
+    "@angular/localize": ["@angular/localize@21.2.4", "", { "dependencies": { "@babel/core": "7.29.0", "@types/babel__core": "7.20.5", "tinyglobby": "^0.2.12", "yargs": "^18.0.0" }, "peerDependencies": { "@angular/compiler": "21.2.4", "@angular/compiler-cli": "21.2.4" }, "bin": { "localize-extract": "tools/bundles/src/extract/cli.js", "localize-migrate": "tools/bundles/src/migrate/cli.js", "localize-translate": "tools/bundles/src/translate/cli.js" } }, "sha512-brKKeH+jaTlY4coIOinKQtitLCguQzyniKYtfrhCvZSN0ap4W4PljAT5w3l+1a8e7/ThM1JVQpqtVCCcJHJZSg=="],
 
     "@angular/platform-browser": ["@angular/platform-browser@21.2.4", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/animations": "21.2.4", "@angular/common": "21.2.4", "@angular/core": "21.2.4" }, "optionalPeers": ["@angular/animations"] }, "sha512-1A9e/cQVu+3BkRCktLcO3RZGuw8NOTHw1frUUrpAz+iMyvIT4sDRFbL+U1g8qmOCZqRNC1Pi1HZfZ1kl6kvrcQ=="],
 
@@ -465,6 +468,14 @@
     "@tufjs/models": ["@tufjs/models@4.1.0", "", { "dependencies": { "@tufjs/canonical-json": "2.0.0", "minimatch": "^10.1.1" } }, "sha512-Y8cK9aggNRsqJVaKUlEYs4s7CvQ1b1ta2DVPyAimb0I2qhzjNk+A+mxvll/klL0RlfuIUei8BF7YWiua4kQqww=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
+
+    "@types/babel__core": ["@types/babel__core@7.20.5", "", { "dependencies": { "@babel/parser": "^7.20.7", "@babel/types": "^7.20.7", "@types/babel__generator": "*", "@types/babel__template": "*", "@types/babel__traverse": "*" } }, "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA=="],
+
+    "@types/babel__generator": ["@types/babel__generator@7.27.0", "", { "dependencies": { "@babel/types": "^7.0.0" } }, "sha512-ufFd2Xi92OAVPYsy+P4n7/U7e68fex0+Ee8gSG9KX7eo084CWiQ4sdxktvdl0bOPupXtVJPY19zk6EwWqUQ8lg=="],
+
+    "@types/babel__template": ["@types/babel__template@7.4.4", "", { "dependencies": { "@babel/parser": "^7.1.0", "@babel/types": "^7.0.0" } }, "sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A=="],
+
+    "@types/babel__traverse": ["@types/babel__traverse@7.28.0", "", { "dependencies": { "@babel/types": "^7.28.2" } }, "sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q=="],
 
     "@types/chai": ["@types/chai@5.2.3", "", { "dependencies": { "@types/deep-eql": "*", "assertion-error": "^2.0.1" } }, "sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA=="],
 

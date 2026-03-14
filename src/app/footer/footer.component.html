@@ -1,10 +1,10 @@
 <footer class="footer">
   <div class="footer__inner">
     <p class="footer__copy">
-      &copy; {{ currentYear }} Seu Nome. Todos os direitos reservados.
+      &copy; {{ currentYear }} Seu Nome. <ng-container i18n="@@footer.rights">Todos os direitos reservados.</ng-container>
     </p>
 
-    <nav class="footer__social" aria-label="Redes sociais">
+    <nav class="footer__social" aria-label="Redes sociais" i18n-aria-label="@@footer.socialAriaLabel">
       @for (link of socialLinks; track link.icon) {
         <a
           [href]="link.href"

@@ -8,7 +8,10 @@
       "Read(//c/Users/Windows/**)",
       "Bash(export PATH=\"$PATH:/c/Users/Windows/AppData/Roaming/npm\")",
       "Bash(bun x:*)",
-      "Bash(echo $PATH)"
+      "Bash(echo $PATH)",
+      "Bash(ls -la /c/Projetos/Portfólio/*.json)",
+      "Bash(bun add:*)",
+      "Bash(ng build:*)"
     ]
   }
 }

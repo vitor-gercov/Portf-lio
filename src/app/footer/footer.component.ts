@@ -14,25 +14,25 @@ export class FooterComponent {
       label: 'LinkedIn',
       href: '#',
       icon: 'linkedin',
-      ariaLabel: 'Meu perfil no LinkedIn',
+      ariaLabel: $localize`:@@footer.linkedInAriaLabel:Meu perfil no LinkedIn`,
     },
     {
       label: 'GitHub',
       href: '#',
       icon: 'github',
-      ariaLabel: 'Meu perfil no GitHub',
+      ariaLabel: $localize`:@@footer.githubAriaLabel:Meu perfil no GitHub`,
     },
     {
       label: 'WhatsApp',
       href: '#',
       icon: 'whatsapp',
-      ariaLabel: 'Entrar em contato via WhatsApp',
+      ariaLabel: $localize`:@@footer.whatsappAriaLabel:Entrar em contato via WhatsApp`,
     },
     {
       label: 'E-mail',
       href: '#',
       icon: 'email',
-      ariaLabel: 'Enviar um e-mail',
+      ariaLabel: $localize`:@@footer.emailAriaLabel:Enviar um e-mail`,
     },
   ];
 }

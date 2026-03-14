@@ -32,6 +32,37 @@
     }
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-bg-secondary);
+      color: var(--color-text-primary);
+    }
+  }
+
   &__theme-toggle {
     display: flex;
     align-items: center;
