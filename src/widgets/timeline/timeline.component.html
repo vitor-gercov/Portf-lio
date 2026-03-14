@@ -1,4 +1,10 @@
-<section class="timeline">
+<section id="timeline" class="timeline" tabindex="-1">
+  <div class="timeline__header">
+    <h2 class="timeline__title">Trajetória</h2>
+    <p class="timeline__subtitle">Minha jornada profissional e acadêmica</p>
+  </div>
+
+  <div class="timeline__body">
   <div class="timeline__line" aria-hidden="true"></div>
 
   @for (event of events; track event.id; let i = $index) {
@@ -63,4 +69,10 @@
       </div>
     </div>
   }
+
+  <div class="timeline__end" aria-hidden="true">
+    <span class="timeline__end-dot"></span>
+    <p class="timeline__end-text">Continuando a escrever...</p>
+  </div>
+  </div>
 </section>

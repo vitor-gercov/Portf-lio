@@ -1,0 +1,18 @@
+<nav class="sidebar" aria-label="Navegação por seções da página">
+  <ol class="sidebar__list">
+    @for (section of sections; track section.id) {
+      <li class="sidebar__item">
+        <a
+          class="sidebar__link"
+          [class.sidebar__link--active]="activeSection() === section.id"
+          [href]="'#' + section.id"
+          [attr.aria-current]="activeSection() === section.id ? 'location' : null"
+          (click)="scrollTo(section.id, $event)"
+        >
+          <span class="sidebar__label">{{ section.label }}</span>
+          <span class="sidebar__dot" aria-hidden="true"></span>
+        </a>
+      </li>
+    }
+  </ol>
+</nav>

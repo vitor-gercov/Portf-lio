@@ -1,0 +1,67 @@
+<section id="projects" class="projects" tabindex="-1">
+  <div class="projects__header">
+    <h2 class="projects__title">Projetos</h2>
+    <p class="projects__subtitle">Uma seleção dos projetos que desenvolvi</p>
+  </div>
+
+  <div class="projects__grid">
+    @for (project of projects; track project.id) {
+      <article class="projects__card" #projectCard>
+        <a
+          class="projects__card-image-link"
+          [href]="project.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="'Ver projeto: ' + project.title"
+          tabindex="-1"
+        >
+          <img
+            class="projects__card-image"
+            [src]="project.image"
+            [alt]="project.title"
+            loading="lazy"
+          />
+          <span class="projects__card-image-overlay" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </span>
+        </a>
+
+        <div class="projects__card-body">
+          <p class="projects__card-date">
+            {{ getMonthLabel(project.launchDate.month) }}&nbsp;{{ project.launchDate.year }}
+          </p>
+
+          <h3 class="projects__card-title">
+            <a
+              class="projects__card-title-link"
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ project.title }}
+              <svg class="projects__card-title-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </h3>
+
+          <p class="projects__card-description">{{ project.description }}</p>
+
+          @if (project.tags?.length) {
+            <div class="projects__card-tags">
+              @for (tag of project.tags; track tag.label) {
+                <span class="projects__card-tag {{ getCategoryClass(tag) }}">{{ tag.label }}</span>
+              }
+            </div>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

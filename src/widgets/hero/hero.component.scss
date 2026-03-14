@@ -1,0 +1,261 @@
+// ─── Theme tokens (light mode defaults) ────────────────────────────────────
+:host {
+  --_base: #e8edf8;
+  --_grid-major: rgba(79, 70, 229, 0.08);
+  --_grid-minor: rgba(79, 70, 229, 0.04);
+  --_glow-color: rgba(99, 102, 241, 0.18);
+  --_glow-size: 65% 55%;
+  --_fade-start: rgba(249, 250, 251, 0);
+  --_fade-end: #f9fafb;
+  --_text: #111827;
+  --_subtitle: #4b5563;
+  --_badge-bg: rgba(79, 70, 229, 0.08);
+  --_badge-border: rgba(79, 70, 229, 0.2);
+  --_badge-text: #4f46e5;
+  --_badge-dot: #4f46e5;
+  --_title-accent: #4f46e5;
+  --_scroll-color: rgba(17, 24, 39, 0.35);
+
+  display: block;
+}
+
+// ─── Dark mode overrides ────────────────────────────────────────────────────
+:host-context([data-theme='dark']) {
+  --_base: #070c18;
+  --_grid-major: rgba(129, 140, 248, 0.1);
+  --_grid-minor: rgba(129, 140, 248, 0.05);
+  --_glow-color: rgba(99, 102, 241, 0.22);
+  --_glow-size: 70% 60%;
+  --_fade-start: rgba(7, 12, 24, 0);
+  --_fade-end: #0f172a;
+  --_text: #f1f5f9;
+  --_subtitle: #94a3b8;
+  --_badge-bg: rgba(129, 140, 248, 0.1);
+  --_badge-border: rgba(129, 140, 248, 0.25);
+  --_badge-text: #818cf8;
+  --_badge-dot: #818cf8;
+  --_title-accent: #818cf8;
+  --_scroll-color: rgba(241, 245, 249, 0.3);
+}
+
+// ─── Hero section ───────────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  width: 100%;
+  height: 85svh;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  // Tech grid background: fine grid + coarse grid
+  background-color: var(--_base);
+  background-image:
+    linear-gradient(var(--_grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-major) 1px, transparent 1px),
+    linear-gradient(var(--_grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-minor) 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+    -1px -1px,
+    -1px -1px,
+    -1px -1px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  // ─── Background layers ───────────────────────────────────────────────────
+  &__background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  // Radial accent glow at center
+  &__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse var(--_glow-size) at 50% 45%,
+      var(--_glow-color) 0%,
+      transparent 70%
+    );
+    transition: background 0.3s ease;
+  }
+
+  // Bottom fade to blend with the page below
+  &__fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, var(--_fade-start), var(--_fade-end));
+    transition: background 0.3s ease;
+  }
+
+  // ─── Content ─────────────────────────────────────────────────────────────
+  &__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    animation: hero-enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  // ─── Badge ───────────────────────────────────────────────────────────────
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.875rem;
+    border: 1px solid var(--_badge-border);
+    border-radius: 999px;
+    background-color: var(--_badge-bg);
+    color: var(--_badge-text);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  &__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--_badge-dot);
+    animation: pulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  // ─── Title ───────────────────────────────────────────────────────────────
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+    font-size: clamp(2.75rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--_text);
+    transition: color 0.3s ease;
+  }
+
+  &__title-first {
+    display: block;
+  }
+
+  &__title-last {
+    display: block;
+    color: var(--_title-accent);
+    transition: color 0.3s ease;
+  }
+
+  // ─── Subtitle ────────────────────────────────────────────────────────────
+  &__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    color: var(--_subtitle);
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
+  }
+
+  // ─── Scroll indicator ────────────────────────────────────────────────────
+  &__scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: hero-enter 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  &__scroll-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--_scroll-color);
+    transition: color 0.3s ease;
+  }
+
+  &__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--_scroll-color), transparent);
+    animation: scroll-drop 2s ease-in-out infinite;
+    transform-origin: top;
+  }
+}
+
+// ─── Animations ─────────────────────────────────────────────────────────────
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes scroll-drop {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+
+// ─── Reduced motion ─────────────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .hero__content,
+  .hero__scroll {
+    animation: none;
+  }
+
+  .hero__badge-dot {
+    animation: none;
+  }
+
+  .hero__scroll-line {
+    animation: none;
+  }
+}
