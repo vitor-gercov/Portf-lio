@@ -5,30 +5,17 @@
   </div>
 
   <div class="timeline__body">
-  <div class="timeline__line" aria-hidden="true"></div>
+    <div class="timeline__line" aria-hidden="true"></div>
 
-  @for (event of events; track event.id; let i = $index) {
-    <div
-      class="timeline__item"
-      [class.timeline__item--right]="i % 2 !== 0"
-      #timelineItem
-    >
+    @for (event of events; track event.id; let i = $index) {
+    <div class="timeline__item" [class.timeline__item--right]="i % 2 !== 0" #timelineItem>
       <!-- Node side: always 50% wide, node at edge closest to center line -->
       <div class="timeline__node-side">
-        <button
-          class="timeline__node"
-          type="button"
-          [class.is-active]="isOpen(event.id)"
+        <button class="timeline__node" type="button" [class.is-active]="isOpen(event.id)"
           [attr.aria-expanded]="isOpen(event.id)"
           [attr.aria-label]="(isOpen(event.id) ? 'Fechar detalhes: ' : 'Ver detalhes: ') + event.title"
-          (click)="toggleEvent(event.id)"
-        >
-          <img
-            class="timeline__image"
-            [src]="event.image"
-            [alt]="event.title"
-            loading="lazy"
-          />
+          (click)="toggleEvent(event.id)">
+          <img class="timeline__image" [src]="event.image" [alt]="event.title" loading="lazy" />
           <span class="timeline__date">
             {{ getMonthLabel(event.month) }}&nbsp;{{ event.year }}
           </span>
@@ -40,14 +27,11 @@
       <div class="timeline__detail-side" [class.is-open]="isOpen(event.id)">
         <div class="timeline__detail-card">
           <div class="timeline__detail-body">
-            <button
-              class="timeline__detail-close"
-              type="button"
-              aria-label="Fechar"
-              (click)="toggleEvent(event.id)"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12"/>
+            <button class="timeline__detail-close" type="button" aria-label="Fechar" (click)="toggleEvent(event.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
 
@@ -56,23 +40,22 @@
             </p>
             <h3 class="timeline__detail-title">{{ event.title }}</h3>
             <p class="timeline__detail-text">{{ event.details }}</p>
-
             @if (event.tags?.length) {
-              <div class="timeline__detail-tags">
-                @for (tag of event.tags; track tag) {
-                  <span class="timeline__detail-tag">{{ tag }}</span>
-                }
-              </div>
+            <div class="timeline__detail-tags">
+              @for (tag of event.tags; track tag) {
+              <span class="timeline__detail-tag">{{ tag }}</span>
+              }
+            </div>
             }
           </div>
         </div>
       </div>
     </div>
-  }
+    }
 
-  <div class="timeline__end" aria-hidden="true">
-    <span class="timeline__end-dot"></span>
-    <p class="timeline__end-text">Continuando a escrever...</p>
-  </div>
+    <div class="timeline__end" aria-hidden="true">
+      <span class="timeline__end-dot"></span>
+      <p class="timeline__end-text">Continuando a escrever...</p>
+    </div>
   </div>
 </section>
