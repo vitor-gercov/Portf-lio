@@ -26,8 +26,8 @@ export class AboutComponent {
   ];
 
   movies: PodiumItem[] = [
-    { name: 'Bastardos Inglórios', image: 'https://rollingstone.com.br/wp-content/uploads/bastardos_inglorios_foto_divulgacao.jpg' },
-    { name: 'Tropa de Elite', image: 'https://m.media-amazon.com/images/M/MV5BMjc4NDM2MzY2NV5BMl5BanBnXkFtZTgwNjY3OTA0MzI@._V1_.jpg' },
+    { name: $localize`:@@about.movie1:Bastardos Inglórios`, image: 'https://rollingstone.com.br/wp-content/uploads/bastardos_inglorios_foto_divulgacao.jpg' },
+    { name: $localize`:@@about.movie2:Tropa de Elite`, image: 'https://m.media-amazon.com/images/M/MV5BMjc4NDM2MzY2NV5BMl5BanBnXkFtZTgwNjY3OTA0MzI@._V1_.jpg' },
     { name: 'Kill Bill', image: 'https://www.sleek-mag.com/wp-content/uploads/2018/10/Kill_Bill_Volume_1-912132366-large-1-1024x676.jpg' },
   ];
 

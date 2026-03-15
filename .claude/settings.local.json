@@ -13,7 +13,10 @@
       "Bash(bun add:*)",
       "Bash(ng build:*)",
       "mcp__Claude_Preview__preview_start",
-      "Bash(where bun:*)"
+      "Bash(where bun:*)",
+      "Bash(find /c/Projetos/Portfólio/src -type f \\\\\\(-name *.ts -o -name *.html -o -name *.json \\\\\\))",
+      "Bash(xargs grep:*)",
+      "Bash(ls /c/Users/Windows/AppData/Roaming/npm/bun*)"
     ]
   }
 }
