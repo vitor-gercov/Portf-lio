@@ -32,4 +32,12 @@ export class HeaderComponent {
   protected closeDropdown(): void {
     this.dropdownOpen.set(false);
   }
+
+  scrollTo(id: string, event: MouseEvent): void {
+    event.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.focus({ preventScroll: true });
+  }
 }

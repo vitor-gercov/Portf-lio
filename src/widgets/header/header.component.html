@@ -1,68 +1,50 @@
 <header class="header">
   <nav class="header__nav">
-    <a class="header__name" routerLink="/">Vitor Gobato Gercov</a>
+    <a class="header__name" href="#hero" (click)="scrollTo('hero', $event)">Vitor Gobato Gercov</a>
 
     <div class="header__actions">
       <div class="header__lang-dropdown" [class.open]="dropdownOpen()">
-        <button
-          class="header__lang-trigger"
-          type="button"
-          (click)="toggleDropdown($event)"
-          [attr.aria-expanded]="dropdownOpen()"
-          aria-haspopup="listbox"
-        >
-          <img
-            class="header__lang-flag"
-            [src]="localeService.getCurrentOption().flagUrl"
-            [alt]="localeService.getCurrentOption().flagAlt"
-            width="20" height="15"
-          />
+        <button class="header__lang-trigger" type="button" (click)="toggleDropdown($event)"
+          [attr.aria-expanded]="dropdownOpen()" aria-haspopup="listbox">
+          <img class="header__lang-flag" [src]="localeService.getCurrentOption().flagUrl"
+            [alt]="localeService.getCurrentOption().flagAlt" width="20" height="15" />
           <span class="header__lang-label">{{ localeService.getCurrentOption().label }}</span>
-          <svg class="header__lang-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 9 6 6 6-6"/>
+          <svg class="header__lang-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
           </svg>
         </button>
 
         @if (dropdownOpen()) {
-          <ul class="header__lang-menu" role="listbox" (click)="$event.stopPropagation()">
-            @for (locale of localeService.locales; track locale.code) {
-              <li
-                class="header__lang-option"
-                [class.active]="locale.code === localeService.currentLocale()"
-                role="option"
-                [attr.aria-selected]="locale.code === localeService.currentLocale()"
-                (click)="selectLocale(locale.code)"
-              >
-                <img
-                  class="header__lang-flag"
-                  [src]="locale.flagUrl"
-                  [alt]="locale.flagAlt"
-                  width="20" height="15"
-                />
-                <span>{{ locale.label }}</span>
-              </li>
-            }
-          </ul>
+        <ul class="header__lang-menu" role="listbox" (click)="$event.stopPropagation()">
+          @for (locale of localeService.locales; track locale.code) {
+          <li class="header__lang-option" [class.active]="locale.code === localeService.currentLocale()" role="option"
+            [attr.aria-selected]="locale.code === localeService.currentLocale()" (click)="selectLocale(locale.code)">
+            <img class="header__lang-flag" [src]="locale.flagUrl" [alt]="locale.flagAlt" width="20" height="15" />
+            <span>{{ locale.label }}</span>
+          </li>
+          }
+        </ul>
         }
       </div>
 
-      <button
-        class="header__theme-toggle"
-        type="button"
-        (click)="themeService.toggle()"
-        [attr.aria-label]="themeService.theme() === 'dark' ? lightModeLabel : darkModeLabel"
-      >
+      <button class="header__theme-toggle" type="button" (click)="themeService.toggle()"
+        [attr.aria-label]="themeService.theme() === 'dark' ? lightModeLabel : darkModeLabel">
         @if (themeService.theme() === 'dark') {
-          <!-- Sun icon: switch to light -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-          </svg>
+        <!-- Sun icon: switch to light -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
         } @else {
-          <!-- Moon icon: switch to dark -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-          </svg>
+        <!-- Moon icon: switch to dark -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
         }
       </button>
     </div>
