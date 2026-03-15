@@ -21,11 +21,13 @@ interface SidebarSection {
 export class SidebarComponent implements OnInit, OnDestroy {
   private readonly platformId = inject(PLATFORM_ID);
 
+  readonly navAriaLabel = $localize`:@@sidebar.navAriaLabel:Navegação por seções da página`;
+
   readonly sections: SidebarSection[] = [
-    { id: 'hero', label: 'Início' },
-    { id: 'timeline', label: 'Experiência' },
-    { id: 'projects', label: 'Projetos' },
-    { id: 'about', label: 'Sobre mim' },
+    { id: 'hero', label: $localize`:@@sidebar.section.hero:Início` },
+    { id: 'timeline', label: $localize`:@@sidebar.section.timeline:Experiência` },
+    { id: 'projects', label: $localize`:@@sidebar.section.projects:Projetos` },
+    { id: 'about', label: $localize`:@@sidebar.section.about:Sobre mim` },
   ];
 
   activeSection = signal<string>('hero');

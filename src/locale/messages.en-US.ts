@@ -41,6 +41,13 @@ export const enUSTranslations: Record<string, string> = {
   'footer.whatsappAriaLabel': 'Contact via WhatsApp',
   'footer.emailAriaLabel': 'Send an email',
 
+  // Sidebar
+  'sidebar.navAriaLabel': 'Page section navigation',
+  'sidebar.section.hero': 'Home',
+  'sidebar.section.timeline': 'Experience',
+  'sidebar.section.projects': 'Projects',
+  'sidebar.section.about': 'About me',
+
   // Header
   'header.lightMode': 'Enable light mode',
   'header.darkMode': 'Enable dark mode',

@@ -1,4 +1,4 @@
-<nav class="sidebar" aria-label="Navegação por seções da página">
+<nav class="sidebar" [attr.aria-label]="navAriaLabel">
   <ol class="sidebar__list">
     @for (section of sections; track section.id) {
       <li class="sidebar__item">
