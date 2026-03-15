@@ -1,11 +1,9 @@
 import { Component, HostListener, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../shared/services/theme.service';
 import { AppLocale, LocaleService } from '../../shared/services/locale.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
