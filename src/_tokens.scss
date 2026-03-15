@@ -1,0 +1,85 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// DESIGN TOKENS — fonte única de verdade para todas as cores do projeto.
+// Para alterar qualquer cor, edite apenas aqui e propaga automaticamente.
+// ═══════════════════════════════════════════════════════════════════════════
+
+:root {
+  // ─── Paleta principal ────────────────────────────────────────────────────
+  --color-bg-primary:    #ffffff;
+  --color-bg-secondary:  #f9fafb;
+  --color-text-primary:  #111827;
+  --color-text-secondary:#6b7280;
+  --color-border:        #e5e7eb;
+  --color-accent:        #4f46e5;
+  --color-accent-hover:  #4338ca;
+
+  // ─── Hero ────────────────────────────────────────────────────────────────
+  --hero-bg:           #e8edf8;
+  --hero-grid-major:   rgba(79, 70, 229, 0.08);
+  --hero-grid-minor:   rgba(79, 70, 229, 0.04);
+  --hero-glow:         rgba(99, 102, 241, 0.18);
+  --hero-glow-size:    65% 55%;
+  --hero-fade-start:   rgba(249, 250, 251, 0);
+  --hero-fade-end:     #f9fafb;
+  --hero-subtitle:     #4b5563;
+  --hero-badge-bg:     rgba(79, 70, 229, 0.08);
+  --hero-badge-border: rgba(79, 70, 229, 0.2);
+  --hero-scroll:       rgba(17, 24, 39, 0.35);
+
+  // ─── Medalhas (seção about) ──────────────────────────────────────────────
+  --medal-gold:   #f59e0b;
+  --medal-silver: #9ca3af;
+  --medal-bronze: #b45309;
+
+  // ─── Degraus do pódio (seção about) ──────────────────────────────────────
+  --podium-step-gold:   #fef3c7;
+  --podium-step-silver: #f3f4f6;
+  --podium-step-bronze: #fef9c3;
+
+  // ─── Cores das tags (seção projects) ─────────────────────────────────────
+  --tag-framework: #7c3aed;
+  --tag-language:  #0891b2;
+  --tag-library:   #059669;
+  --tag-database:  #d97706;
+  --tag-platform:  #dc2626;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  // ─── Paleta principal ────────────────────────────────────────────────────
+  --color-bg-primary:    #0f172a;
+  --color-bg-secondary:  #1e293b;
+  --color-text-primary:  #f1f5f9;
+  --color-text-secondary:#94a3b8;
+  --color-border:        #334155;
+  --color-accent:        #818cf8;
+  --color-accent-hover:  #a5b4fc;
+
+  // ─── Hero ────────────────────────────────────────────────────────────────
+  --hero-bg:           #070c18;
+  --hero-grid-major:   rgba(129, 140, 248, 0.1);
+  --hero-grid-minor:   rgba(129, 140, 248, 0.05);
+  --hero-glow:         rgba(99, 102, 241, 0.22);
+  --hero-glow-size:    70% 60%;
+  --hero-fade-start:   rgba(7, 12, 24, 0);
+  --hero-fade-end:     #0f172a;
+  --hero-subtitle:     #94a3b8;
+  --hero-badge-bg:     rgba(129, 140, 248, 0.1);
+  --hero-badge-border: rgba(129, 140, 248, 0.25);
+  --hero-scroll:       rgba(241, 245, 249, 0.3);
+
+  // ─── Degraus do pódio (seção about) ──────────────────────────────────────
+  --podium-step-gold:   #292206;
+  --podium-step-silver: #1e293b;
+  --podium-step-bronze: #231a02;
+
+  // ─── Cores das tags (seção projects) ─────────────────────────────────────
+  --tag-framework: #a78bfa;
+  --tag-language:  #22d3ee;
+  --tag-library:   #34d399;
+  --tag-database:  #fbbf24;
+  --tag-platform:  #f87171;
+
+  color-scheme: dark;
+}

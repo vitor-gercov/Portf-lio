@@ -21,6 +21,18 @@ export const enUSTranslations: Record<string, string> = {
   'about.position2': '2nd',
   'about.position3': '3rd',
 
+  // Projects
+  'projects.title': 'Projects',
+  'projects.subtitle': 'A selection of projects I developed',
+  'projects.openLink': 'View project: ',
+  'projects.project1.description':
+    'Landing page for my tattoo artist, showcasing her work as well as a guide for clients and a CTA to get in touch with her.',
+  'projects.project2.description':
+    'A site to help me with my guitar practice. It\'s a bit neglected, but I still have many plans for it.',
+  'projects.project3.title': 'My portfolio',
+  'projects.project3.description':
+    'The very site you\'re browsing right now! Lol, my most recent work, built in a weekend with vibe coding.',
+
   // Footer
   'footer.rights': 'All rights reserved.',
   'footer.socialAriaLabel': 'Social networks',

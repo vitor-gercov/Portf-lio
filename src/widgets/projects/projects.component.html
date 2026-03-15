@@ -1,7 +1,7 @@
 <section id="projects" class="projects" tabindex="-1">
   <div class="projects__header">
-    <h2 class="projects__title">Projetos</h2>
-    <p class="projects__subtitle">Uma seleção dos projetos que desenvolvi</p>
+    <h2 class="projects__title" i18n="@@projects.title">Projetos</h2>
+    <p class="projects__subtitle" i18n="@@projects.subtitle">Uma seleção dos projetos que desenvolvi</p>
   </div>
 
   <div class="projects__grid">
@@ -12,7 +12,7 @@
           [href]="project.url"
           target="_blank"
           rel="noopener noreferrer"
-          [attr.aria-label]="'Ver projeto: ' + project.title"
+          [attr.aria-label]="getOpenLinkLabel(project.title)"
           tabindex="-1"
         >
           <img

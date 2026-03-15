@@ -1,25 +1,5 @@
-// ─── Medal colours ─────────────────────────────────────────────────────────
-$gold:   #f59e0b;
-$silver: #9ca3af;
-$bronze: #b45309;
-
-// ─── Theme tokens ───────────────────────────────────────────────────────────
 :host {
-  --_photo-border: var(--color-border);
-  --_photo-bg:     var(--color-bg-secondary);
-  --_photo-hint:   var(--color-text-secondary);
-  --_bio-bg:       var(--color-bg-secondary);
-  --_podium-step-gold:   #fef3c7;
-  --_podium-step-silver: #f3f4f6;
-  --_podium-step-bronze: #fef9c3;
-
   display: block;
-}
-
-:host-context([data-theme='dark']) {
-  --_podium-step-gold:   #292206;
-  --_podium-step-silver: #1e293b;
-  --_podium-step-bronze: #231a02;
 }
 
 // ─── Section ────────────────────────────────────────────────────────────────
@@ -69,8 +49,8 @@ $bronze: #b45309;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--_photo-border);
-  background: var(--_photo-bg);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg-secondary);
   transition:
     border-color 0.2s ease,
     background 0.2s ease;
@@ -91,9 +71,9 @@ $bronze: #b45309;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 2px dashed var(--_photo-border);
+  border: 2px dashed var(--color-border);
   border-radius: 50%;
-  color: var(--_photo-hint);
+  color: var(--color-text-secondary);
   cursor: default;
 }
 
@@ -112,7 +92,7 @@ $bronze: #b45309;
 
 // ─── Bio ────────────────────────────────────────────────────────────────────
 .about__bio {
-  background: var(--_bio-bg);
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
@@ -256,27 +236,27 @@ $bronze: #b45309;
 // ─── Medal colours per slot ─────────────────────────────────────────────────
 .about__podium-slot--gold {
   .about__podium-step {
-    background: var(--_podium-step-gold);
-    border: 2px solid color-mix(in srgb, #{$gold} 50%, transparent);
+    background: var(--podium-step-gold);
+    border: 2px solid color-mix(in srgb, var(--medal-gold) 50%, transparent);
   }
-  .about__podium-position { color: $gold; }
-  .about__podium-name     { color: $gold; }
+  .about__podium-position { color: var(--medal-gold); }
+  .about__podium-name     { color: var(--medal-gold); }
 }
 
 .about__podium-slot--silver {
   .about__podium-step {
-    background: var(--_podium-step-silver);
-    border: 2px solid color-mix(in srgb, #{$silver} 50%, transparent);
+    background: var(--podium-step-silver);
+    border: 2px solid color-mix(in srgb, var(--medal-silver) 50%, transparent);
   }
-  .about__podium-position { color: $silver; }
-  .about__podium-name     { color: $silver; }
+  .about__podium-position { color: var(--medal-silver); }
+  .about__podium-name     { color: var(--medal-silver); }
 }
 
 .about__podium-slot--bronze {
   .about__podium-step {
-    background: var(--_podium-step-bronze);
-    border: 2px solid color-mix(in srgb, #{$bronze} 50%, transparent);
+    background: var(--podium-step-bronze);
+    border: 2px solid color-mix(in srgb, var(--medal-bronze) 50%, transparent);
   }
-  .about__podium-position { color: $bronze; }
-  .about__podium-name     { color: $bronze; }
+  .about__podium-position { color: var(--medal-bronze); }
+  .about__podium-name     { color: var(--medal-bronze); }
 }

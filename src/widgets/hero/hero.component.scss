@@ -1,44 +1,8 @@
-// ─── Theme tokens (light mode defaults) ────────────────────────────────────
 :host {
-  --_base: #e8edf8;
-  --_grid-major: rgba(79, 70, 229, 0.08);
-  --_grid-minor: rgba(79, 70, 229, 0.04);
-  --_glow-color: rgba(99, 102, 241, 0.18);
-  --_glow-size: 65% 55%;
-  --_fade-start: rgba(249, 250, 251, 0);
-  --_fade-end: #f9fafb;
-  --_text: #111827;
-  --_subtitle: #4b5563;
-  --_badge-bg: rgba(79, 70, 229, 0.08);
-  --_badge-border: rgba(79, 70, 229, 0.2);
-  --_badge-text: #4f46e5;
-  --_badge-dot: #4f46e5;
-  --_title-accent: #4f46e5;
-  --_scroll-color: rgba(17, 24, 39, 0.35);
-
   display: block;
 }
 
-// ─── Dark mode overrides ────────────────────────────────────────────────────
-:host-context([data-theme='dark']) {
-  --_base: #070c18;
-  --_grid-major: rgba(129, 140, 248, 0.1);
-  --_grid-minor: rgba(129, 140, 248, 0.05);
-  --_glow-color: rgba(99, 102, 241, 0.22);
-  --_glow-size: 70% 60%;
-  --_fade-start: rgba(7, 12, 24, 0);
-  --_fade-end: #0f172a;
-  --_text: #f1f5f9;
-  --_subtitle: #94a3b8;
-  --_badge-bg: rgba(129, 140, 248, 0.1);
-  --_badge-border: rgba(129, 140, 248, 0.25);
-  --_badge-text: #818cf8;
-  --_badge-dot: #818cf8;
-  --_title-accent: #818cf8;
-  --_scroll-color: rgba(241, 245, 249, 0.3);
-}
-
-// ─── Hero section ───────────────────────────────────────────────────────────
+// ─── Hero section ────────────────────────────────────────────────────────────
 .hero {
   position: relative;
   width: 100%;
@@ -51,12 +15,12 @@
   overflow: hidden;
 
   // Tech grid background: fine grid + coarse grid
-  background-color: var(--_base);
+  background-color: var(--hero-bg);
   background-image:
-    linear-gradient(var(--_grid-major) 1px, transparent 1px),
-    linear-gradient(90deg, var(--_grid-major) 1px, transparent 1px),
-    linear-gradient(var(--_grid-minor) 1px, transparent 1px),
-    linear-gradient(90deg, var(--_grid-minor) 1px, transparent 1px);
+    linear-gradient(var(--hero-grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-major) 1px, transparent 1px),
+    linear-gradient(var(--hero-grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-minor) 1px, transparent 1px);
   background-size:
     100px 100px,
     100px 100px,
@@ -83,8 +47,8 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(
-      ellipse var(--_glow-size) at 50% 45%,
-      var(--_glow-color) 0%,
+      ellipse var(--hero-glow-size) at 50% 45%,
+      var(--hero-glow) 0%,
       transparent 70%
     );
     transition: background 0.3s ease;
@@ -97,7 +61,7 @@
     left: 0;
     right: 0;
     height: 30%;
-    background: linear-gradient(to bottom, var(--_fade-start), var(--_fade-end));
+    background: linear-gradient(to bottom, var(--hero-fade-start), var(--hero-fade-end));
     transition: background 0.3s ease;
   }
 
@@ -120,10 +84,10 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.35rem 0.875rem;
-    border: 1px solid var(--_badge-border);
+    border: 1px solid var(--hero-badge-border);
     border-radius: 999px;
-    background-color: var(--_badge-bg);
-    color: var(--_badge-text);
+    background-color: var(--hero-badge-bg);
+    color: var(--color-accent);
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -138,7 +102,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--_badge-dot);
+    background-color: var(--color-accent);
     animation: pulse 2.4s ease-in-out infinite;
     flex-shrink: 0;
   }
@@ -153,7 +117,7 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.03em;
-    color: var(--_text);
+    color: var(--color-text-primary);
     transition: color 0.3s ease;
   }
 
@@ -163,7 +127,7 @@
 
   &__title-last {
     display: block;
-    color: var(--_title-accent);
+    color: var(--color-accent);
     transition: color 0.3s ease;
   }
 
@@ -171,7 +135,7 @@
   &__subtitle {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 400;
-    color: var(--_subtitle);
+    color: var(--hero-subtitle);
     letter-spacing: 0.01em;
     transition: color 0.3s ease;
   }
@@ -194,14 +158,14 @@
     font-size: 0.6875rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--_scroll-color);
+    color: var(--hero-scroll);
     transition: color 0.3s ease;
   }
 
   &__scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--_scroll-color), transparent);
+    background: linear-gradient(to bottom, var(--hero-scroll), transparent);
     animation: scroll-drop 2s ease-in-out infinite;
     transform-origin: top;
   }
