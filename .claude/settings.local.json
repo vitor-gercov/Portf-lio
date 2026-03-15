@@ -11,7 +11,9 @@
       "Bash(echo $PATH)",
       "Bash(ls -la /c/Projetos/Portfólio/*.json)",
       "Bash(bun add:*)",
-      "Bash(ng build:*)"
+      "Bash(ng build:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where bun:*)"
     ]
   }
 }
